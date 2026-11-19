@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array List</title>
+</head>
+<body>
+
+<h2>My Items</h2>
+
+<input type="text" id="item" placeholder="Enter an item">
+<button onclick="addItem()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+let items = [];
+
+function addItem() {
+    let value = document.getElementById("item").value;
+
+    if (value !== "") {
+        items.push(value);
+
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+
+        for (let i = 0; i < items.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = items[i];
+            list.appendChild(li);
+        }
+
+        document.getElementById("item").value = "";
+    }
+}
+</script>
+
+</body>
+</html>
